@@ -1,0 +1,11 @@
+{
+  "name": "Monolyth Code",
+  "short_name": "Monolyth",
+  "icons": [
+    { "src": "/android-chrome-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#0A0E17",
+  "background_color": "#0A0E17",
+  "display": "standalone"
+}

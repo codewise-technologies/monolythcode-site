@@ -1,0 +1,20 @@
+.ftr { position: relative; padding-block: clamp(64px, 8vw, 104px) var(--s-6); border-top: 1px solid var(--line-dark); }
+.ftr-top { display: grid; gap: var(--s-7); }
+.ftr-brand img { height: 52px; width: auto; }
+.ftr-statement { color: var(--grey-300); margin-top: var(--s-5); max-width: 42ch; }
+.ftr-head { color: var(--grey-400); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem; margin-bottom: var(--s-4); }
+.ftr-col ul { display: grid; gap: 10px; margin: 0; }
+.ftr-col a { color: var(--white); text-decoration: none; transition: color 0.18s var(--ease); }
+.ftr-col a:hover { color: var(--blue-400); }
+.ftr-plain { color: var(--grey-300); }
+.ftr-bottom {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-3);
+  margin-top: var(--s-8); padding-top: var(--s-5); border-top: 1px solid var(--line-dark);
+  color: var(--grey-400); font-size: 0.875rem;
+}
+@media (min-width: 768px) {
+  .ftr-top { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1024px) {
+  .ftr-top { grid-template-columns: 1.6fr 1fr 0.8fr 1fr; }
+}

@@ -1,0 +1,37 @@
+.svc-jump { position: sticky; top: var(--header-h); z-index: 20; border-bottom: 1px solid var(--line-dark); background: rgba(14, 20, 33, 0.96); }
+.svc-jump ul { display: flex; gap: 4px; margin: 0; overflow-x: auto; scrollbar-width: none; }
+.svc-jump ul::-webkit-scrollbar { display: none; }
+.svc-jump a {
+  display: inline-flex; align-items: center; min-height: 52px; padding: 0 14px; white-space: nowrap;
+  color: var(--grey-300); text-decoration: none; font-size: 0.92rem; font-weight: 500;
+  border-bottom: 2px solid transparent;
+}
+.svc-jump a:hover { color: #fff; border-bottom-color: var(--blue-500); }
+
+.svc-rows { display: grid; gap: clamp(72px, 9vw, 128px); }
+.svc-row { display: grid; gap: var(--s-6); align-items: center; scroll-margin-top: calc(var(--header-h) + 72px); }
+.svc-row-art {
+  position: relative; display: grid; place-items: center;
+  aspect-ratio: 4 / 3; border-radius: var(--r-lg); padding: var(--s-7);
+  background:
+    radial-gradient(ellipse at 50% 60%, rgba(59, 130, 246, 0.18), transparent 60%),
+    var(--navy-950);
+  overflow: hidden;
+}
+.svc-row-art svg { width: min(70%, 300px); height: auto; filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.5)); }
+.svc-row-code { position: absolute; top: var(--s-5); left: var(--s-5); color: var(--grey-400); letter-spacing: 0.14em; font-size: 0.72rem; }
+.svc-row-lede { margin-top: var(--s-4); color: var(--fg); }
+.svc-row-list { margin: var(--s-5) 0; }
+.svc-row-mods { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 var(--s-6); }
+.svc-row-mods li { padding: 5px 10px; border: 1px solid var(--line); border-radius: var(--r-sm); background: var(--paper); color: var(--slate-600); font-size: 0.75rem; }
+@media (min-width: 960px) {
+  .svc-row { grid-template-columns: 0.9fr 1.1fr; gap: var(--s-8); }
+  .svc-row.is-flipped .svc-row-art { order: 2; }
+}
+
+.eng-cols { display: grid; gap: var(--s-6); margin: 0; }
+.eng-cols > li { padding-top: var(--s-5); border-top: 2px solid var(--blue-500); }
+.eng-cols-best { color: var(--blue-400); margin: var(--s-2) 0 var(--s-4); font-size: 0.8rem; }
+.eng-cols ul { display: grid; gap: 8px; margin: 0; }
+.eng-cols ul li { color: var(--grey-300); }
+@media (min-width: 900px) { .eng-cols { grid-template-columns: repeat(3, 1fr); gap: var(--s-7); } }

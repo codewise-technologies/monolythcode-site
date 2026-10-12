@@ -1,0 +1,245 @@
+// ---------------------------------------------------------------
+// Service catalogue. Every page (home, services, detail, menus,
+// footer, contact form) is generated from this list.
+// Glyphs are isometric boxes: x/y/z position, w/d/h size, in units.
+// ---------------------------------------------------------------
+
+export const SERVICES = [
+  {
+    slug: 'erp-systems',
+    name: 'ERP systems',
+    rack: 'ERP',
+    lower: 'ERP systems',
+    noun: 'ERP system',
+    short: 'Finance, inventory, sales and HR in one system.',
+    title: 'One system for every department.',
+    summary:
+      'An ERP brings finance, inventory, sales, purchasing and people onto a single platform, so every team works from the same live numbers instead of reconciling spreadsheets at month end.',
+    audience: [
+      'Growing businesses that have outgrown spreadsheets and disconnected tools',
+      'Multi-branch retailers and distributors who need one view of stock',
+      'Manufacturers who need production, costing and inventory to agree',
+      'Organisations preparing for audits, investors or expansion',
+    ],
+    modules: [
+      { code: 'FIN', name: 'Finance & accounting', text: 'General ledger, payables, receivables, bank reconciliation, budgets and tax-ready financial statements.' },
+      { code: 'INV', name: 'Inventory & warehouse', text: 'Multi-location stock, batch and serial tracking, transfers, reorder levels and stock valuation.' },
+      { code: 'SAL', name: 'Sales & CRM', text: 'Quotations, sales orders, invoicing, price lists, customer history and credit limits.' },
+      { code: 'PUR', name: 'Purchasing', text: 'Purchase requests, approvals, purchase orders, goods received and supplier performance.' },
+      { code: 'HRM', name: 'HR & payroll', text: 'Employee records, attendance, leave, payroll runs and payslips, configured to your policies.' },
+      { code: 'MFG', name: 'Manufacturing', text: 'Bills of materials, production orders, work-in-progress and actual product costing.' },
+      { code: 'RPT', name: 'Reports & dashboards', text: 'Live KPIs, scheduled reports and role-based dashboards for owners, managers and staff.' },
+    ],
+    integrations: ['Point of sale', 'E-commerce stores', 'Payment gateways', 'Bank statement imports', 'Barcode & label printers', 'Mobile apps for field staff'],
+    highlights: [
+      'Start with the modules you need and add others later',
+      'Migration from spreadsheets and legacy systems',
+      'Cloud-hosted or on your own servers',
+      'Full audit trail and role-based permissions',
+    ],
+    faqs: [
+      { q: 'Can we start with just a few modules?', a: 'Yes. Most clients go live with finance and inventory first, then add sales, purchasing, HR or manufacturing in later phases. The system is designed to grow module by module without re-implementation.' },
+      { q: 'Can you move our existing data across?', a: 'We migrate opening balances, item masters, customers, suppliers and open transactions from spreadsheets or your current system, and reconcile the figures with you before go-live.' },
+      { q: 'Cloud or on-premise?', a: 'Either. We can host it in the cloud with managed backups and monitoring, or deploy it on your own servers. Both run in a web browser on desktops and tablets.' },
+      { q: 'How is this different from off-the-shelf ERP?', a: 'Off-the-shelf ERP makes you adapt your processes to the software and pay per-user licences indefinitely. We configure and extend the system around how you work, and you own it.' },
+    ],
+    glyph: [
+      { x: 0, y: 0, z: 0, w: 4, d: 4, h: 0.9 },
+      { x: 0, y: 0, z: 1.35, w: 4, d: 4, h: 0.9 },
+      { x: 0, y: 0, z: 2.7, w: 4, d: 4, h: 0.9, accent: true },
+    ],
+  },
+  {
+    slug: 'hotel-management-systems',
+    name: 'Hotel management systems',
+    rack: 'HOTEL PMS',
+    lower: 'hotel management systems',
+    noun: 'hotel system',
+    short: 'Reservations, front desk, billing and housekeeping.',
+    title: 'Run the whole property from one screen.',
+    summary:
+      'A property management system built around the front desk: reservations, room status, guest billing, housekeeping and reporting in one place, for hotels, resorts, boutique properties and villas.',
+    audience: [
+      'Hotels and resorts replacing paper registers or ageing desktop software',
+      'Boutique hotels and villas that want direct bookings, not only OTA bookings',
+      'Hotel groups that need consolidated reporting across properties',
+      'Properties with restaurants, bars and spas that bill to the room',
+    ],
+    modules: [
+      { code: 'RES', name: 'Reservations & front desk', text: 'Availability calendar, bookings, group blocks, check-in and check-out, walk-ins and deposits.' },
+      { code: 'RMS', name: 'Rooms & rates', text: 'Room types, seasonal and promotional rates, meal plans, packages and minimum-stay rules.' },
+      { code: 'BIL', name: 'Billing & folios', text: 'Guest folios, split bills, multiple currencies, advance payments, invoices and city ledger.' },
+      { code: 'HSK', name: 'Housekeeping', text: 'Live room status board, cleaning assignments and maintenance requests from a phone or tablet.' },
+      { code: 'POS', name: 'Restaurant & bar POS', text: 'Outlet sales with post-to-room charging, kitchen orders and outlet-level reports.' },
+      { code: 'WEB', name: 'Booking engine', text: 'Commission-free direct booking on your own website with live availability and online payment.' },
+      { code: 'CRM', name: 'Guest profiles', text: 'Stay history, preferences, repeat-guest recognition and marketing consent.' },
+      { code: 'RPT', name: 'Night audit & reports', text: 'Occupancy, ADR, RevPAR, revenue by source and daily manager reports.' },
+    ],
+    integrations: ['Channel managers for OTA sync', 'Payment gateways & card terminals', 'Accounting & ERP', 'Door lock systems', 'Guest Wi-Fi & messaging', 'Multi-property dashboards'],
+    highlights: [
+      'Designed with front-desk staff, not just managers',
+      'Works on desktop, tablet and phone',
+      'Single-property or multi-property',
+      'Connects to your ERP and accounting',
+    ],
+    faqs: [
+      { q: 'Can it sync with Booking.com and other OTAs?', a: 'Yes, through integration with a channel manager, which keeps your availability and rates in sync across online travel agencies while reservations flow straight into the system.' },
+      { q: 'We already use a PMS. Can you migrate us?', a: 'We import room setup, rates, guest profiles and future reservations, then run both systems side by side for a short period so the switch-over does not disrupt operations.' },
+      { q: 'Does it work if the internet goes down?', a: 'We can design for intermittent connectivity, with local caching for critical front-desk functions, and agree the right approach for your property during discovery.' },
+      { q: 'How long does a typical rollout take?', a: 'For a single property, a typical rollout is measured in weeks rather than months, including setup, data migration and staff training. We confirm the timeline in the scope document.' },
+    ],
+    glyph: [
+      { x: 0, y: 0, z: 0, w: 5, d: 3.2, h: 1.1 },
+      {
+        x: 0.8, y: 0.6, z: 1.1, w: 3, d: 2, h: 4.2, accent: true,
+        windows: [
+          ...[0, 1, 2].flatMap((i) => [0, 1, 2, 3].map((j) => ({ face: 'left', a0: 0.3 + i * 0.95, a1: 0.8 + i * 0.95, b0: 0.45 + j * 0.95, b1: 0.95 + j * 0.95 }))),
+          ...[0, 1].flatMap((i) => [0, 1, 2, 3].map((j) => ({ face: 'right', a0: 0.35 + i * 0.85, a1: 0.8 + i * 0.85, b0: 0.45 + j * 0.95, b1: 0.95 + j * 0.95 }))),
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'mobile-apps',
+    name: 'Mobile apps',
+    rack: 'MOBILE',
+    lower: 'mobile apps',
+    noun: 'app',
+    short: 'Android and iOS apps for customers and staff.',
+    title: 'Apps people keep on their home screen.',
+    summary:
+      'Android and iOS apps for your customers or your own teams in the field — designed, engineered, connected to your systems and published to Google Play and the App Store.',
+    audience: [
+      'Businesses launching a customer app for ordering, booking or loyalty',
+      'Operations teams that need field, delivery or inspection apps',
+      'Companies extending their ERP or hotel system to mobile',
+      'Start-ups building a mobile-first product',
+    ],
+    modules: [
+      { code: 'UXD', name: 'Product & UX design', text: 'User research, flows and high-fidelity designs that follow Android and iOS platform conventions.' },
+      { code: 'XPL', name: 'Cross-platform apps', text: 'One Flutter or React Native codebase for Android and iOS, to reach both stores faster.' },
+      { code: 'NAT', name: 'Native apps', text: 'Kotlin and Swift when an app needs maximum performance or deep device integration.' },
+      { code: 'API', name: 'Backend & APIs', text: 'Secure APIs, authentication, admin panels and integrations with your existing systems.' },
+      { code: 'OFF', name: 'Offline & sync', text: 'Apps that keep working without signal and sync safely once connected — essential for field teams.' },
+      { code: 'PAY', name: 'Payments & notifications', text: 'In-app payments, push notifications, deep links and analytics.' },
+      { code: 'PUB', name: 'Store publishing', text: 'Google Play and App Store listings, review submissions, release tracks and update management.' },
+    ],
+    integrations: ['Your ERP or hotel system', 'Payment gateways', 'Maps & location', 'Push notification services', 'Analytics & crash reporting', 'Single sign-on'],
+    highlights: [
+      'Android and iOS from one team',
+      'Published under your own developer accounts',
+      'Built for operating-system updates, not just launch day',
+      'Admin panel to manage content and users',
+    ],
+    faqs: [
+      { q: 'Cross-platform or native?', a: 'Most business apps are best built cross-platform: one codebase, both stores, lower cost to maintain. We recommend native only when the app depends on heavy graphics, specialised hardware or platform-specific features.' },
+      { q: 'Will the app be published under our name?', a: 'Yes. Apps are published to your own Google Play and Apple developer accounts, so you keep ownership of the listing, reviews and users. We can help you set the accounts up.' },
+      { q: 'What happens after launch?', a: 'Android and iOS change every year. Our support plans cover OS compatibility updates, security patches, store policy changes and new features.' },
+      { q: 'Can the app work with our existing system?', a: 'Yes. We build or extend APIs so the app reads and writes the same data as your ERP, hotel system or website, rather than becoming another silo.' },
+    ],
+    glyph: [
+      { x: 0, y: 0, z: 0, w: 3, d: 0.45, h: 5.4, windows: [{ face: 'left', a0: 0.25, a1: 2.75, b0: 0.55, b1: 4.95, tone: 'accent' }] },
+      { x: 3.5, y: -1.6, z: 3.4, w: 1, d: 1, h: 1, accent: true },
+    ],
+  },
+  {
+    slug: 'web-development',
+    name: 'Websites & web platforms',
+    rack: 'WEB',
+    lower: 'websites & web platforms',
+    noun: 'website',
+    short: 'Corporate sites, e-commerce and web portals.',
+    title: 'Websites that explain, convince and convert.',
+    summary:
+      'Fast, secure websites and web platforms — from corporate sites and online stores to customer portals and internal dashboards — that your team can update without calling a developer.',
+    audience: [
+      'Companies whose website no longer reflects the business',
+      'Retailers moving sales online or out of marketplace platforms',
+      'Businesses that need customer or partner portals',
+      'Teams that need internal dashboards and web tools',
+    ],
+    modules: [
+      { code: 'COR', name: 'Corporate websites', text: 'Clear structure, considered copy and design that presents the company the way it deserves.' },
+      { code: 'ECM', name: 'E-commerce', text: 'Catalogues, carts, payments, delivery rules and order management connected to your stock.' },
+      { code: 'PRT', name: 'Portals & dashboards', text: 'Secure customer, supplier and staff portals with logins, roles and live data.' },
+      { code: 'CMS', name: 'Content management', text: 'An editing experience your team can use to publish pages, news and products safely.' },
+      { code: 'SEO', name: 'Search foundations', text: 'Technical SEO, structured data, fast load times and clean URLs from launch.' },
+      { code: 'A11', name: 'Accessibility', text: 'Built to WCAG guidelines so the site works for every visitor and every device.' },
+      { code: 'OPS', name: 'Hosting & care', text: 'Managed hosting, SSL, backups, monitoring and security updates after launch.' },
+    ],
+    integrations: ['Payment gateways', 'ERP & inventory', 'CRM & email marketing', 'Analytics', 'Booking engines', 'Live chat & WhatsApp'],
+    highlights: [
+      'Performance and security as launch requirements',
+      'Editable by your team',
+      'Responsive on every screen size',
+      'Analytics set up from day one',
+    ],
+    faqs: [
+      { q: 'Can we update the website ourselves?', a: 'Yes. We set up a content management system and train your team to edit pages, news, products and images without touching code.' },
+      { q: 'Do you write the content?', a: 'We work with you on structure and messaging, and can write or refine copy. You approve every page before launch.' },
+      { q: 'Will the site rank on Google?', a: 'We build the technical foundations search engines reward — speed, structure, metadata and accessibility. Rankings also depend on content and competition, which we can advise on.' },
+      { q: 'Can you redesign our existing site?', a: 'Yes. We review what works today, keep your search rankings with proper redirects, and rebuild on a modern, maintainable stack.' },
+    ],
+    glyph: [
+      { x: 1.7, y: -0.6, z: 0, w: 1.8, d: 1.6, h: 0.22 },
+      { x: 2.4, y: 0, z: 0.22, w: 0.4, d: 0.3, h: 0.45 },
+      {
+        x: 0, y: 0, z: 0.67, w: 5.2, d: 0.35, h: 3.6,
+        windows: [
+          { face: 'left', a0: 0.25, a1: 4.95, b0: 2.95, b1: 3.35, tone: 'accent' },
+          { face: 'left', a0: 0.25, a1: 2.55, b0: 0.3, b1: 2.65, tone: 'dark' },
+          { face: 'left', a0: 2.8, a1: 4.95, b0: 2.25, b1: 2.5, tone: 'dark' },
+          { face: 'left', a0: 2.8, a1: 4.6, b0: 1.8, b1: 2.05, tone: 'dark' },
+          { face: 'left', a0: 2.8, a1: 4.95, b0: 1.35, b1: 1.6, tone: 'dark' },
+          { face: 'left', a0: 2.8, a1: 3.9, b0: 0.3, b1: 0.75, tone: 'accent' },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'custom-software',
+    name: 'Custom software',
+    rack: 'CUSTOM',
+    lower: 'custom software',
+    noun: 'software project',
+    short: 'Software shaped around the way you work.',
+    title: 'Software that fits the business, not the other way round.',
+    summary:
+      'When off-the-shelf tools force your team into workarounds, we design and build software around your actual processes — internal tools, integrations, automation and modernisation of legacy systems.',
+    audience: [
+      'Teams running critical processes on spreadsheets and email',
+      'Businesses with systems that do not talk to each other',
+      'Companies relying on legacy software that is hard to maintain',
+      'Organisations with unique workflows no product supports',
+    ],
+    modules: [
+      { code: 'WFA', name: 'Workflow automation', text: 'Approvals, notifications and repetitive tasks automated end to end, with a clear audit trail.' },
+      { code: 'INT', name: 'Integrations & APIs', text: 'Connect ERP, CRM, e-commerce, banks and third-party services so data flows without re-keying.' },
+      { code: 'TLS', name: 'Internal tools', text: 'Purpose-built portals and back-office tools for operations, finance and management.' },
+      { code: 'MOD', name: 'Legacy modernisation', text: 'Re-platform ageing desktop or on-premise systems to secure, web-based architecture — in phases.' },
+      { code: 'DAT', name: 'Data & reporting', text: 'Consolidate data from multiple systems into reliable reports and dashboards.' },
+      { code: 'DEV', name: 'Cloud & DevOps', text: 'Containerised deployments, CI/CD pipelines, monitoring and infrastructure as code.' },
+      { code: 'SEC', name: 'Security engineering', text: 'Security reviews, hardening, access control and secure-by-design architecture.' },
+    ],
+    integrations: ['REST & GraphQL APIs', 'Banks & payment providers', 'Government & tax portals (where APIs exist)', 'Email, SMS & WhatsApp', 'Microsoft 365 & Google Workspace', 'Legacy databases'],
+    highlights: [
+      'Discovery and prototype before commitment',
+      'Delivered in two-week sprints',
+      'Modern, maintainable technology',
+      'Security reviewed before release',
+    ],
+    faqs: [
+      { q: 'How do you price custom software?', a: 'After discovery we break the work into milestones with fixed prices. For evolving products, a dedicated team on a monthly basis is often a better fit — we will recommend the model that suits the project.' },
+      { q: 'Can you work with our existing systems and team?', a: 'Yes. We regularly integrate with existing software and work alongside in-house IT teams, with shared repositories, documentation and handover.' },
+      { q: 'What if requirements change during the project?', a: 'Change is normal. Sprint-based delivery lets us re-prioritise as you learn, with any change in scope or cost agreed in writing before work starts.' },
+      { q: 'Can you take over software someone else built?', a: 'Yes. We start with a code and security review, document what exists, fix critical issues and then agree a roadmap for maintenance or modernisation.' },
+    ],
+    glyph: [
+      { x: 0, y: 0, z: 0, w: 4, d: 4, h: 1 },
+      { x: 0, y: 0, z: 1, w: 2.6, d: 2.6, h: 1 },
+      { x: 0, y: 0, z: 2, w: 1.2, d: 1.2, h: 1, accent: true },
+    ],
+  },
+]
+
+export const serviceBySlug = (slug) => SERVICES.find((s) => s.slug === slug)

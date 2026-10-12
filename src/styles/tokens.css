@@ -1,0 +1,100 @@
+/* ------------------------------------------------------------------
+   Monolyth Code design tokens — derived from the logo system.
+   ------------------------------------------------------------------ */
+:root {
+  /* Brand palette */
+  --navy-950: #0A0E17;   /* Monolith Navy */
+  --navy-900: #0E1421;
+  --navy-850: #131B2B;
+  --navy-800: #1A2336;
+  --line-dark: #253048;
+  --blue-400: #6EA4F8;
+  --blue-500: #3B82F6;   /* Code Blue — accents on dark */
+  --blue-600: #2563EB;   /* Deep Code Blue — accents & buttons on light */
+  --blue-700: #1D4ED8;
+  --white: #F5F7FA;      /* Slab White */
+  --paper: #FFFFFF;
+  --grey-300: #AAB4C3;   /* Slab Grey */
+  --grey-400: #8C96A6;
+  --slate-500: #5B6577;
+  --slate-600: #3A4558;  /* Slate */
+  --line-light: #DCE1E9;
+  --danger: #C2410C;
+  --success: #15803D;
+
+  /* Type */
+  --font-display: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --fs-display: clamp(2.6rem, 1.4rem + 4.6vw, 5.1rem);
+  --fs-h1: clamp(2.3rem, 1.4rem + 3.4vw, 4rem);
+  --fs-h2: clamp(1.9rem, 1.3rem + 2.2vw, 3rem);
+  --fs-h3: clamp(1.2rem, 1.1rem + 0.4vw, 1.4rem);
+  --fs-lede: clamp(1.08rem, 1rem + 0.35vw, 1.28rem);
+  --fs-body: 1.0625rem;
+  --fs-small: 0.9375rem;
+  --fs-mono: 0.75rem;
+
+  /* Space (8px base) */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px;
+  --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px; --s-10: 128px;
+  --section-y: clamp(72px, 9vw, 136px);
+  --gutter: clamp(16px, 4vw, 40px);
+  --container: 1240px;
+
+  /* Shape & depth */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --shadow-1: 0 1px 2px rgba(10, 14, 23, 0.06), 0 1px 1px rgba(10, 14, 23, 0.04);
+  --shadow-2: 0 10px 30px -12px rgba(10, 14, 23, 0.22);
+  --shadow-3: 0 28px 60px -24px rgba(10, 14, 23, 0.45);
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --header-h: 72px;
+}
+
+/* Section themes: every component reads these, so it works on either background */
+.theme-dark {
+  --bg: var(--navy-950);
+  --surface: var(--navy-900);
+  --surface-2: var(--navy-850);
+  --fg: var(--white);
+  --fg-strong: #FFFFFF;
+  --muted: var(--grey-300);
+  --line: var(--line-dark);
+  --accent: var(--blue-500);
+  --link: var(--blue-400);
+  --iso-top: #F5F7FA;
+  --iso-left: #D9DFE8;
+  --iso-right: #96A2B4;
+  --iso-accent: var(--blue-500);
+  --iso-win: #2A3448;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.theme-light {
+  --bg: var(--white);
+  --surface: var(--paper);
+  --surface-2: #EEF1F5;
+  --fg: var(--slate-600);
+  --fg-strong: var(--navy-950);
+  --muted: var(--slate-500);
+  --line: var(--line-light);
+  --accent: var(--blue-600);
+  --link: var(--blue-600);
+  --iso-top: #5B6577;
+  --iso-left: #0A0E17;
+  --iso-right: #3A4558;
+  --iso-accent: var(--blue-600);
+  --iso-win: #3A4558;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.theme-paper {
+  --bg: var(--paper);
+}
+.theme-light.theme-paper { background: var(--paper); }
