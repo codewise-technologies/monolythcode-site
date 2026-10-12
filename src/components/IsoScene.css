@@ -1,0 +1,53 @@
+/* Isometric scenes are drawn for dark panels. */
+.iso-scene { overflow: visible; }
+
+.sc-default .sc-top { fill: #F5F7FA; }
+.sc-default .sc-left { fill: #D9DFE8; }
+.sc-default .sc-right { fill: #96A2B4; }
+.sc-default.sc-accent .sc-top { fill: var(--blue-500); }
+
+.sc-blue .sc-top { fill: var(--blue-500); }
+.sc-blue .sc-left { fill: var(--blue-600); }
+.sc-blue .sc-right { fill: var(--blue-700); }
+
+.sc-dark .sc-top { fill: #33405A; }
+.sc-dark .sc-left { fill: #1F2940; }
+.sc-dark .sc-right { fill: #151D2E; }
+.sc-dark.sc-accent .sc-top { fill: var(--blue-500); }
+
+.sc-plate .sc-top { fill: #121A2A; }
+.sc-plate .sc-left { fill: #0D1420; }
+.sc-plate .sc-right { fill: #0A0F19; }
+.sc-grid { fill: none; stroke: #1F2A42; stroke-width: 0.8; }
+
+.sc-win-win { fill: #2A3448; }
+.sc-win-accent { fill: var(--blue-500); }
+.sc-win-lit { fill: var(--blue-400); }
+.sc-win-screen { fill: #E8EDF4; }
+.sc-win-muted { fill: #B9C3D1; }
+.sc-win-ink { fill: #3A4558; }
+
+.sc-label {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  fill: #3A4558;
+}
+.sc-blue .sc-label { fill: #fff; }
+.sc-dark .sc-label { fill: #AAB4C3; }
+
+.sc-line { fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-dasharray: 4 5; }
+.sc-line-accent { stroke: var(--blue-500); animation: sc-flow 1.6s linear infinite; }
+.sc-line-muted { stroke: #3A4558; }
+@keyframes sc-flow { to { stroke-dashoffset: -18; } }
+
+.sc-shadow { fill: rgba(0, 0, 0, 0.38); }
+.sc-shadow-float { animation: sc-shadow 4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+
+.sc-float { animation: sc-bob 4s ease-in-out infinite; }
+@keyframes sc-bob { 50% { transform: translateY(-7px); } }
+@keyframes sc-shadow { 50% { opacity: 0.6; transform: scale(0.92); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-float, .sc-shadow-float, .sc-line-accent { animation: none; }
+}

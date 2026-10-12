@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Check } from 'lucide-react'
-import IsoGlyph from '../components/IsoGlyph'
+import IsoScene from '../components/IsoScene'
+import { SCENES } from '../data/scenes'
 import { CtaBand, PageHero, SectionHead, usePageMeta } from '../components/blocks'
 import { SERVICES } from '../data/services'
 import { ENGAGEMENTS } from '../data/site'
@@ -36,7 +37,7 @@ export default function Services() {
             <article key={s.slug} id={s.slug} className={`svc-row${i % 2 ? ' is-flipped' : ''}`} aria-labelledby={`${s.slug}-title`}>
               <div className="svc-row-art theme-dark">
                 <p className="svc-row-code mono">{s.rack}</p>
-                <IsoGlyph boxes={s.glyph} />
+                <IsoScene items={SCENES[s.slug]} />
               </div>
               <div className="svc-row-copy">
                 <h2 className="h2" id={`${s.slug}-title`}>{s.name}</h2>

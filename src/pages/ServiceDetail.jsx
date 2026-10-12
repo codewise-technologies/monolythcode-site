@@ -1,6 +1,8 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { ArrowRight, Check, ExternalLink } from 'lucide-react'
 import IsoGlyph from '../components/IsoGlyph'
+import IsoScene from '../components/IsoScene'
+import { SCENES } from '../data/scenes'
 import { CtaBand, Faq, PageHero, Process, SectionHead, usePageMeta } from '../components/blocks'
 import { SERVICES, serviceBySlug } from '../data/services'
 import { SITE } from '../data/site'
@@ -22,7 +24,7 @@ export default function ServiceDetail() {
         eyebrow={s.name}
         title={s.title}
         lede={s.summary}
-        glyph={s.glyph}
+        art={<IsoScene items={SCENES[s.slug]} />}
       >
         <Link to={`/contact?service=${s.slug}`} className="btn btn-primary">Discuss your project <ArrowRight aria-hidden="true" /></Link>
         {showDemo

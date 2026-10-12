@@ -13,6 +13,7 @@
 .phero-lede { margin-top: var(--s-5); }
 .phero-actions { margin-top: var(--s-6); }
 .phero-art { display: grid; place-items: center; }
+.phero-art > svg.iso-scene { width: min(100%, 500px); max-height: 440px; height: auto; filter: drop-shadow(0 40px 50px rgba(0, 0, 0, 0.45)); }
 .phero-art > svg { width: min(100%, 340px); max-height: 380px; height: auto; filter: drop-shadow(0 40px 50px rgba(0, 0, 0, 0.45)); }
 @media (min-width: 900px) {
   .phero-grid.has-glyph { grid-template-columns: 1.35fr 0.65fr; }
@@ -50,8 +51,10 @@
 .process-meta dd { color: var(--fg-strong); }
 
 @media (min-width: 1024px) {
-  .process { grid-template-columns: repeat(5, 1fr); gap: var(--s-5); }
-  .process-step { padding: 72px 0 0; }
+  .process { grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(4, auto); column-gap: var(--s-5); row-gap: 0; }
+  .process-step { grid-row: span 4; grid-template-rows: subgrid; row-gap: var(--s-3); padding: 72px 0 0; }
+  .process-meta { display: contents; }
+  .process-meta > div:last-child { margin-top: -6px; }
   .process-step::before { left: 52px; right: calc(-1 * var(--s-5)); top: 21px; bottom: auto; width: auto; height: 2px; }
   .process-step:last-child::before { display: none; }
   .process-step .h3 { padding-top: 0; }

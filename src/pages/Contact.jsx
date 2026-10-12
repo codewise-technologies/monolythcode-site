@@ -6,7 +6,7 @@ import { SERVICES } from '../data/services'
 import { SITE } from '../data/site'
 import './Contact.css'
 
-const TIMELINES = ['As soon as possible', 'Within 3 months', 'In 3 to 6 months', 'Just exploring options']
+const TIMELINES = ['As soon as possible', 'Within 3 months', 'Just exploring options']
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 
 const NEXT = [
