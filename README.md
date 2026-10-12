@@ -30,19 +30,44 @@ Push to `main`. Vercel builds automatically using `vercel.json`. That file also 
 - Long-term caching for hashed assets
 
 ## Contact form email (one-time setup)
-In Vercel, go to **Project → Settings → Environment Variables** and add:
+In Vercel, go to **Project → Settings → Environment Variables**, add the variables for one option below, then redeploy.
 
-| Name | Example |
+**Current setup: Formspree.** Add one variable, `FORMSPREE_ENDPOINT` = the form's endpoint (e.g. `https://formspree.io/f/abc123`). The recipient inbox is set in Formspree under the form's **Settings**. The endpoint is only used server-side by `api/contact.js`, so the bot checks cannot be bypassed. When this variable is set, the SMTP variables are ignored.
+
+**Option A: Resend (works with Zoho's free plan, recommended).** Zoho's Forever Free plan does not allow SMTP logins (Zoho answers `554 5.7.8 Access Restricted`), so a sending service delivers the enquiry into your Zoho inbox instead. Create a free Resend account, add the domain `monolythcode.com`, add the DNS records it shows in Cloudflare (DNS only), wait for **Verified**, then create an API key with **Sending access**.
+
+| Name | Value |
 |---|---|
-| `SMTP_HOST` | `smtppro.zoho.com` (Zoho organisation mailboxes; use `.in` / `.eu` if your Zoho data centre is India / EU) |
+| `SMTP_HOST` | `smtp.resend.com` |
+| `SMTP_PORT` | `465` |
+| `SMTP_USER` | `resend` |
+| `SMTP_PASS` | The Resend API key (Secret type) |
+| `SMTP_FROM` | `website@monolythcode.com` (any address on the verified domain) |
+| `CONTACT_TO` | The Zoho inbox that should receive enquiries |
+
+**Option B: Zoho SMTP (paid Zoho plan only).** Copy the server from Zoho Mail → Settings → Mail Accounts → SMTP (`smtppro.zoho.com` for paid organisation accounts; `.in` / `.eu` for India / EU data centres).
+
+| Name | Value |
+|---|---|
+| `SMTP_HOST` | `smtppro.zoho.com` |
 | `SMTP_PORT` | `465` |
 | `SMTP_USER` | `hello@monolythcode.com` |
-| `SMTP_PASS` | An **app-specific password** from Zoho (required when 2FA is on) |
+| `SMTP_PASS` | An **app-specific password** generated while signed in as that user |
 | `CONTACT_TO` | The inbox that should receive enquiries |
 
-Redeploy after adding them. If your Zoho plan does not allow SMTP access, use any transactional email provider's SMTP credentials instead. Only these variables change.
+`SMTP_FROM` is optional when `SMTP_USER` is itself an email address. Every enquiry has the visitor as **Reply-To**, so pressing Reply answers them directly.
 
-The endpoint validates input, limits field lengths, strips line breaks from header fields (to prevent header injection), and silently discards bots that fill the hidden honeypot field.
+The endpoint validates input, limits field lengths, strips line breaks from header fields (to prevent header injection), and silently discards bots that fill the hidden honeypot field or submit in under 3 seconds.
+
+### Bot protection (Cloudflare Turnstile)
+In the Cloudflare dashboard open **Turnstile → Add widget**, add the hostnames `monolythcode.com` and `www.monolythcode.com`, choose **Managed** mode, then add both keys in Vercel and redeploy:
+
+| Name | Value |
+|---|---|
+| `VITE_TURNSTILE_SITE_KEY` | Site key (public, used at build time) |
+| `TURNSTILE_SECRET_KEY` | Secret key (Secret type) |
+
+Set both or neither. With only the secret set, every enquiry is rejected because the form cannot produce a token.
 
 ## Structure
 ```

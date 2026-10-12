@@ -1,13 +1,16 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { AlertCircle, ArrowRight, CheckCircle2, Clock, Globe, Mail, Phone } from 'lucide-react'
 import { PageHero, usePageMeta } from '../components/blocks'
+import Turnstile from '../components/Turnstile'
 import { SERVICES } from '../data/services'
 import { SITE } from '../data/site'
 import './Contact.css'
 
 const TIMELINES = ['As soon as possible', 'Within 3 months', 'Just exploring options']
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
+// Cloudflare Turnstile public site key, set in Vercel as VITE_TURNSTILE_SITE_KEY. No key = no widget.
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY
 
 const NEXT = [
   { t: 'We reply', d: `An engineer reads your message and replies within ${SITE.replyPromise}.` },
@@ -31,7 +34,10 @@ export default function Contact() {
 
   const [values, setValues] = useState({ name: '', email: '', company: '', phone: '', service: preset, timeline: '', message: '', website: '' })
   const [errors, setErrors] = useState({})
-  const [status, setStatus] = useState('idle') // idle | sending | sent | failed
+  const [status, setStatus] = useState('idle') // idle | sending | sent | failed | verify | captcha
+  const [token, setToken] = useState('')
+  const [resetSignal, setResetSignal] = useState(0)
+  const startedAt = useRef(Date.now())
 
   const set = (k) => (ev) => {
     setValues((v) => ({ ...v, [k]: ev.target.value }))
@@ -46,18 +52,31 @@ export default function Contact() {
       document.getElementById(`f-${Object.keys(e)[0]}`)?.focus()
       return
     }
+    if (TURNSTILE_SITE_KEY && !token) {
+      setStatus('verify')
+      return
+    }
     setStatus('sending')
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values),
+        body: JSON.stringify({ ...values, token, elapsed: Date.now() - startedAt.current }),
       })
-      if (!res.ok) throw new Error(String(res.status))
-      setStatus('sent')
+      if (res.status === 403) {
+        setStatus('captcha')
+      } else if (!res.ok) {
+        throw new Error(String(res.status))
+      } else {
+        setStatus('sent')
+        return
+      }
     } catch {
       setStatus('failed')
     }
+    // a Turnstile token works once, so get a fresh one before the next attempt
+    setToken('')
+    setResetSignal((n) => n + 1)
   }
 
   const field = (k, label, props = {}, optional = false) => (
@@ -138,6 +157,27 @@ export default function Contact() {
                   <label htmlFor="f-website">Website</label>
                   <input id="f-website" tabIndex={-1} autoComplete="off" value={values.website} onChange={set('website')} />
                 </div>
+                {TURNSTILE_SITE_KEY && (
+                  <Turnstile
+                    siteKey={TURNSTILE_SITE_KEY}
+                    onToken={(t) => { setToken(t); if (status === 'verify') setStatus('idle') }}
+                    onExpire={() => setToken('')}
+                    onError={() => setToken('')}
+                    resetSignal={resetSignal}
+                  />
+                )}
+                {status === 'verify' && (
+                  <p className="ct-fail" role="alert">
+                    <AlertCircle aria-hidden="true" />
+                    <span>Complete the security check above, then select Send enquiry.</span>
+                  </p>
+                )}
+                {status === 'captcha' && (
+                  <p className="ct-fail" role="alert">
+                    <AlertCircle aria-hidden="true" />
+                    <span>The security check did not pass. Complete it again, then select Send enquiry.</span>
+                  </p>
+                )}
                 {status === 'failed' && (
                   <p className="ct-fail" role="alert">
                     <AlertCircle aria-hidden="true" />
@@ -148,7 +188,7 @@ export default function Contact() {
                   <button type="submit" className="btn btn-primary" disabled={status === 'sending'}>
                     {status === 'sending' ? 'Sending…' : <>Send enquiry <ArrowRight aria-hidden="true" /></>}
                   </button>
-                  <p className="ct-privacy">We only use these details to reply to your enquiry.</p>
+                  <p className="ct-privacy">We only use these details to reply to your enquiry.{TURNSTILE_SITE_KEY && ' Protected by Cloudflare Turnstile.'}</p>
                 </div>
               </form>
             )}

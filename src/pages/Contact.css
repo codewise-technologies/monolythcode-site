@@ -50,3 +50,4 @@
 .ct-direct svg { width: 20px; height: 20px; color: var(--blue-600); margin-top: 3px; }
 .ct-direct a { color: var(--navy-950); font-weight: 600; text-decoration: none; }
 .ct-direct a:hover { text-decoration: underline; }
+.ct-turnstile { min-height: 65px; }
