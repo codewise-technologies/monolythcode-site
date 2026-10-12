@@ -13,9 +13,10 @@
 .phero-lede { margin-top: var(--s-5); }
 .phero-actions { margin-top: var(--s-6); }
 .phero-art { display: grid; place-items: center; }
-.phero-art svg { width: min(100%, 340px); max-height: 380px; height: auto; filter: drop-shadow(0 40px 50px rgba(0, 0, 0, 0.45)); }
+.phero-art > svg { width: min(100%, 340px); max-height: 380px; height: auto; filter: drop-shadow(0 40px 50px rgba(0, 0, 0, 0.45)); }
 @media (min-width: 900px) {
   .phero-grid.has-glyph { grid-template-columns: 1.35fr 0.65fr; }
+  .phero-grid.has-art { grid-template-columns: 1.1fr 0.9fr; gap: var(--s-8); }
 }
 
 /* ---------- Section head ---------- */

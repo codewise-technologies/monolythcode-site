@@ -68,7 +68,7 @@ export default function Header() {
     <header className={`hdr theme-dark${scrolled || drawerOpen ? ' is-scrolled' : ''}`}>
       <a className="skip-link" href="#main">Skip to content</a>
       <div className="container hdr-bar">
-        <Link to="/" className="hdr-logo" aria-label={`${SITE.name} — home`}>
+        <Link to="/" className="hdr-logo" aria-label={`${SITE.name} home page`}>
           <img src="/brand/logo-on-dark.svg" alt="" width="220" height="30" />
         </Link>
 
@@ -101,7 +101,7 @@ export default function Header() {
                 </ul>
                 <div className="mega-aside">
                   <p className="mono mega-kicker">Not sure where to start?</p>
-                  <p className="mega-aside-text">Most projects begin with a short discovery call. Tell us the problem — we will recommend the right system.</p>
+                  <p className="mega-aside-text">Most projects begin with a short discovery call. Tell us the problem and we will recommend the right system.</p>
                   <Link to="/services" className="text-link">All services overview <ArrowRight aria-hidden="true" /></Link>
                   <Link to="/contact" className="text-link">Talk to an engineer <ArrowRight aria-hidden="true" /></Link>
                 </div>

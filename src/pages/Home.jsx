@@ -22,15 +22,15 @@ export default function Home() {
             </h1>
             <p className="lede hero-lede">
               Monolyth Code designs and builds ERP platforms, hotel management systems, mobile apps, websites and
-              custom software — integrated with each other, secured from the first commit, and owned by you.
+              custom software that work together, are secured from the first commit, and are owned by you.
             </p>
             <div className="actions hero-actions">
               <Link to="/contact" className="btn btn-primary">Book a consultation <ArrowRight aria-hidden="true" /></Link>
               <Link to="/services" className="btn btn-ghost">Explore services</Link>
             </div>
             <dl className="hero-facts">
-              <div><dt>Based in</dt><dd>{SITE.location}</dd></div>
-              <div><dt>Working with</dt><dd>Local & international clients</dd></div>
+              <div><dt>Reach</dt><dd>Global clients</dd></div>
+              <div><dt>Support</dt><dd>Dedicated engineers</dd></div>
               <div><dt>You receive</dt><dd>Full source code & IP</dd></div>
             </dl>
           </div>
@@ -47,7 +47,7 @@ export default function Home() {
             id="svc-title"
             eyebrow="What we build"
             title="Five disciplines. One engineering standard."
-            intro="Each service stands on its own — and every system we build is designed to connect with the others, so your business runs on one source of truth."
+            intro="Each service stands on its own, and every system we build is designed to connect with the others so your business runs on one source of truth."
           />
           <ul role="list" className="svc-grid">
             {SERVICES.map((s, i) => (
@@ -88,7 +88,7 @@ export default function Home() {
             id="std-title"
             eyebrow="How we engineer"
             title="Commitments you can hold us to."
-            intro="These are written into every proposal we send — not just this page."
+            intro="These are written into every proposal we send, not just this page."
           />
           <ul role="list" className="std-grid">
             {STANDARDS.map((s) => (
@@ -126,7 +126,7 @@ export default function Home() {
               {TECH.map((t) => <li key={t} className="mono">{t}</li>)}
             </ul>
             <p className="tech-note">
-              We choose proven, well-supported technology your future team can hire for — not whatever is fashionable this year.
+              We choose proven, well-supported technology your future team can hire for, not whatever is fashionable this year.
             </p>
           </aside>
         </div>

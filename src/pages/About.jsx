@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { CtaBand, PageHero, Process, SectionHead, usePageMeta } from '../components/blocks'
-import { SITE } from '../data/site'
+import Terminal from '../components/Terminal'
 import './About.css'
 
 const PRINCIPLES = [
-  { title: 'Clarity over jargon', text: 'You will always know what we are building, why, what it costs and where it stands — in plain language.' },
+  { title: 'Clarity over jargon', text: 'You will always know what we are building, why, what it costs and where it stands, in plain language.' },
   { title: 'Solid before shiny', text: 'Reliability, security and maintainability come first. Visual polish matters, but never at the expense of a system that works.' },
   { title: 'Your system, your ownership', text: 'Code, data and documentation belong to you. We earn continued work by being useful, not by locking you in.' },
   { title: 'Partners for the long run', text: 'Software lives for years after launch. We design for the people who will run and extend it, including your future team.' },
@@ -26,11 +26,8 @@ export default function About() {
         trail={[{ label: 'Home', to: '/' }, { label: 'About' }]}
         eyebrow="About Monolyth Code"
         title="An engineering company for businesses that need software to simply work."
-        lede="We build the systems organisations run on — and we stay accountable for them long after launch."
-        glyph={[
-          { x: 0, y: 0, z: 0, w: 2.4, d: 2.4, h: 6.2 },
-          { x: 0, y: 0, z: 6.65, w: 2.4, d: 2.4, h: 0.3, accent: true },
-        ]}
+        lede="We build the systems organisations run on, and we stay accountable for them long after launch."
+        art={<Terminal />}
       />
 
       {/* Name & story */}
@@ -49,13 +46,12 @@ export default function About() {
               systems is filled with manual work, re-keyed data and numbers nobody fully trusts.
             </p>
             <p className="body-text">
-              We started Monolyth Code to build the opposite — one dependable system, engineered as a whole, that a
-              business can stand on for years. We spell it with a <strong>Y</strong> because it is ours, and we kept
-              <strong> Code</strong> in the name because everything we deliver is engineered, not assembled from templates.
+              We started Monolyth Code to build the opposite: one dependable system, engineered as a whole, that a
+              business can stand on for years.
             </p>
             <p className="body-text">
               Today we design and build ERP platforms, hotel management systems, mobile apps, websites and custom software
-              for clients in {SITE.location} and internationally.
+              for clients around the world.
             </p>
           </div>
         </div>
@@ -70,7 +66,7 @@ export default function About() {
             <p className="lede">
               Before writing business software, our engineering background was in keeping networks, servers, firewalls
               and endpoints running for organisations every day. That shapes how we build: we think about what happens
-              at 2 a.m. when something fails — not just how the demo looks.
+              at 2 a.m. when something fails, not just how the demo looks.
             </p>
           </div>
           <dl className="ab-roots-list">

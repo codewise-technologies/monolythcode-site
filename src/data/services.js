@@ -108,7 +108,7 @@ export const SERVICES = [
     short: 'Android and iOS apps for customers and staff.',
     title: 'Apps people keep on their home screen.',
     summary:
-      'Android and iOS apps for your customers or your own teams in the field — designed, engineered, connected to your systems and published to Google Play and the App Store.',
+      'Android and iOS apps for your customers or your own teams in the field. Designed, engineered, connected to your systems and published to Google Play and the App Store.',
     audience: [
       'Businesses launching a customer app for ordering, booking or loyalty',
       'Operations teams that need field, delivery or inspection apps',
@@ -120,7 +120,7 @@ export const SERVICES = [
       { code: 'XPL', name: 'Cross-platform apps', text: 'One Flutter or React Native codebase for Android and iOS, to reach both stores faster.' },
       { code: 'NAT', name: 'Native apps', text: 'Kotlin and Swift when an app needs maximum performance or deep device integration.' },
       { code: 'API', name: 'Backend & APIs', text: 'Secure APIs, authentication, admin panels and integrations with your existing systems.' },
-      { code: 'OFF', name: 'Offline & sync', text: 'Apps that keep working without signal and sync safely once connected — essential for field teams.' },
+      { code: 'OFF', name: 'Offline & sync', text: 'Apps that keep working without signal and sync safely once connected, which is essential for field teams.' },
       { code: 'PAY', name: 'Payments & notifications', text: 'In-app payments, push notifications, deep links and analytics.' },
       { code: 'PUB', name: 'Store publishing', text: 'Google Play and App Store listings, review submissions, release tracks and update management.' },
     ],
@@ -151,7 +151,7 @@ export const SERVICES = [
     short: 'Corporate sites, e-commerce and web portals.',
     title: 'Websites that explain, convince and convert.',
     summary:
-      'Fast, secure websites and web platforms — from corporate sites and online stores to customer portals and internal dashboards — that your team can update without calling a developer.',
+      'Fast, secure websites and web platforms, from corporate sites and online stores to customer portals and internal dashboards, that your team can update without calling a developer.',
     audience: [
       'Companies whose website no longer reflects the business',
       'Retailers moving sales online or out of marketplace platforms',
@@ -177,7 +177,7 @@ export const SERVICES = [
     faqs: [
       { q: 'Can we update the website ourselves?', a: 'Yes. We set up a content management system and train your team to edit pages, news, products and images without touching code.' },
       { q: 'Do you write the content?', a: 'We work with you on structure and messaging, and can write or refine copy. You approve every page before launch.' },
-      { q: 'Will the site rank on Google?', a: 'We build the technical foundations search engines reward — speed, structure, metadata and accessibility. Rankings also depend on content and competition, which we can advise on.' },
+      { q: 'Will the site rank on Google?', a: 'We build the technical foundations search engines reward: speed, structure, metadata and accessibility. Rankings also depend on content and competition, which we can advise on.' },
       { q: 'Can you redesign our existing site?', a: 'Yes. We review what works today, keep your search rankings with proper redirects, and rebuild on a modern, maintainable stack.' },
     ],
     glyph: [
@@ -205,7 +205,7 @@ export const SERVICES = [
     short: 'Software shaped around the way you work.',
     title: 'Software that fits the business, not the other way round.',
     summary:
-      'When off-the-shelf tools force your team into workarounds, we design and build software around your actual processes — internal tools, integrations, automation and modernisation of legacy systems.',
+      'When off-the-shelf tools force your team into workarounds, we design and build software around your actual processes: internal tools, integrations, automation and modernisation of legacy systems.',
     audience: [
       'Teams running critical processes on spreadsheets and email',
       'Businesses with systems that do not talk to each other',
@@ -216,7 +216,7 @@ export const SERVICES = [
       { code: 'WFA', name: 'Workflow automation', text: 'Approvals, notifications and repetitive tasks automated end to end, with a clear audit trail.' },
       { code: 'INT', name: 'Integrations & APIs', text: 'Connect ERP, CRM, e-commerce, banks and third-party services so data flows without re-keying.' },
       { code: 'TLS', name: 'Internal tools', text: 'Purpose-built portals and back-office tools for operations, finance and management.' },
-      { code: 'MOD', name: 'Legacy modernisation', text: 'Re-platform ageing desktop or on-premise systems to secure, web-based architecture — in phases.' },
+      { code: 'MOD', name: 'Legacy modernisation', text: 'Re-platform ageing desktop or on-premise systems to secure, web-based architecture, in phases.' },
       { code: 'DAT', name: 'Data & reporting', text: 'Consolidate data from multiple systems into reliable reports and dashboards.' },
       { code: 'DEV', name: 'Cloud & DevOps', text: 'Containerised deployments, CI/CD pipelines, monitoring and infrastructure as code.' },
       { code: 'SEC', name: 'Security engineering', text: 'Security reviews, hardening, access control and secure-by-design architecture.' },
@@ -229,7 +229,7 @@ export const SERVICES = [
       'Security reviewed before release',
     ],
     faqs: [
-      { q: 'How do you price custom software?', a: 'After discovery we break the work into milestones with fixed prices. For evolving products, a dedicated team on a monthly basis is often a better fit — we will recommend the model that suits the project.' },
+      { q: 'How do you price custom software?', a: 'After discovery we break the work into milestones with fixed prices. For evolving products, a dedicated team on a monthly basis is often a better fit. We will recommend the model that suits the project.' },
       { q: 'Can you work with our existing systems and team?', a: 'Yes. We regularly integrate with existing software and work alongside in-house IT teams, with shared repositories, documentation and handover.' },
       { q: 'What if requirements change during the project?', a: 'Change is normal. Sprint-based delivery lets us re-prioritise as you learn, with any change in scope or cost agreed in writing before work starts.' },
       { q: 'Can you take over software someone else built?', a: 'Yes. We start with a code and security review, document what exists, fix critical issues and then agree a roadmap for maintenance or modernisation.' },

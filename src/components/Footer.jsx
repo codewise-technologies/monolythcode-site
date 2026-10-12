@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="ftr-brand">
             <img src="/brand/logo-tagline-on-dark.svg" alt={SITE.name} width="300" height="56" />
             <p className="ftr-statement">
-              Business software engineered as one solid system — designed, built, secured and supported by one accountable team.
+              Business software engineered as one solid system. Designed, built, secured and supported by one accountable team.
             </p>
           </div>
 

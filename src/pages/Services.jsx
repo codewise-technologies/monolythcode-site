@@ -7,7 +7,7 @@ import { ENGAGEMENTS } from '../data/site'
 import './Services.css'
 
 export default function Services() {
-  usePageMeta('Services', 'ERP systems, hotel management systems, Android and iOS apps, websites and custom software — designed, built and supported by Monolyth Code.')
+  usePageMeta('Services', 'ERP systems, hotel management systems, Android and iOS apps, websites and custom software, designed, built and supported by Monolyth Code.')
 
   return (
     <>
@@ -76,7 +76,7 @@ export default function Services() {
         </div>
       </section>
 
-      <CtaBand title="Not sure which system you need?" text="Describe the problem rather than the solution. We will recommend the simplest system that solves it — even if that means a smaller project." />
+      <CtaBand title="Not sure which system you need?" text="Describe the problem rather than the solution. We will recommend the simplest system that solves it, even if that means a smaller project." />
     </>
   )
 }

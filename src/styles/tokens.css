@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------------
-   Monolyth Code design tokens — derived from the logo system.
+   Monolyth Code design tokens, derived from the logo system.
    ------------------------------------------------------------------ */
 :root {
   /* Brand palette */
@@ -9,8 +9,8 @@
   --navy-800: #1A2336;
   --line-dark: #253048;
   --blue-400: #6EA4F8;
-  --blue-500: #3B82F6;   /* Code Blue — accents on dark */
-  --blue-600: #2563EB;   /* Deep Code Blue — accents & buttons on light */
+  --blue-500: #3B82F6;   /* Code Blue: accents on dark */
+  --blue-600: #2563EB;   /* Deep Code Blue: accents & buttons on light */
   --blue-700: #1D4ED8;
   --white: #F5F7FA;      /* Slab White */
   --paper: #FFFFFF;

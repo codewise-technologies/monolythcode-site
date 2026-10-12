@@ -8,7 +8,7 @@ import './blocks.css'
 /** Sets the document title and meta description for a page. */
 export function usePageMeta(title, description) {
   useEffect(() => {
-    document.title = title ? `${title} | ${SITE.name}` : `${SITE.name} — ERP, hotel systems, mobile apps & custom software`
+    document.title = title ? `${title} | ${SITE.name}` : `${SITE.name} | ERP, hotel systems, mobile apps & custom software`
     const meta = document.querySelector('meta[name="description"]')
     if (meta && description) meta.setAttribute('content', description)
     const canonical = document.querySelector('link[rel="canonical"]')
@@ -43,10 +43,10 @@ export function Breadcrumbs({ trail }) {
 }
 
 /** Dark hero used by inner pages. */
-export function PageHero({ trail, eyebrow, title, lede, children, glyph }) {
+export function PageHero({ trail, eyebrow, title, lede, children, glyph, art }) {
   return (
     <section className="phero theme-dark lattice">
-      <div className={`container phero-grid${glyph ? ' has-glyph' : ''}`}>
+      <div className={`container phero-grid${glyph ? ' has-glyph' : ''}${art ? ' has-art' : ''}`}>
         <div className="phero-copy">
           {trail && <Breadcrumbs trail={trail} />}
           {eyebrow && <p className="eyebrow">{eyebrow}</p>}
@@ -54,9 +54,9 @@ export function PageHero({ trail, eyebrow, title, lede, children, glyph }) {
           {lede && <p className="lede phero-lede">{lede}</p>}
           {children && <div className="actions phero-actions">{children}</div>}
         </div>
-        {glyph && (
+        {(glyph || art) && (
           <div className="phero-art" aria-hidden="true">
-            <IsoGlyph boxes={glyph} />
+            {art || <IsoGlyph boxes={glyph} />}
           </div>
         )}
       </div>

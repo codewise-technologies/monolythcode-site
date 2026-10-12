@@ -51,14 +51,14 @@ export default async function handler(req, res) {
   const text = [
     `Name:      ${v.name}`,
     `Email:     ${v.email}`,
-    `Company:   ${v.company || '—'}`,
-    `Phone:     ${v.phone || '—'}`,
+    `Company:   ${v.company || '-'}`,
+    `Phone:     ${v.phone || '-'}`,
     `Service:   ${v.service || 'Not sure yet'}`,
-    `Timeline:  ${v.timeline || '—'}`,
+    `Timeline:  ${v.timeline || '-'}`,
     '',
     v.message,
     '',
-    '— Sent from the contact form on monolythcode.com',
+    'Sent from the contact form on monolythcode.com',
   ].join('\n')
 
   try {
@@ -66,7 +66,7 @@ export default async function handler(req, res) {
       from: { name: 'Monolyth Code website', address: SMTP_USER },
       to: CONTACT_TO || SMTP_USER,
       replyTo: { name: v.name, address: v.email },
-      subject: `New enquiry: ${v.service || 'General'} — ${v.name}${v.company ? ` (${v.company})` : ''}`,
+      subject: `New enquiry: ${v.service || 'General'} from ${v.name}${v.company ? ` (${v.company})` : ''}`,
       text,
     })
     return res.status(200).json({ ok: true })

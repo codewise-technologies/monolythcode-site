@@ -1,18 +1,18 @@
 import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { AlertCircle, ArrowRight, CheckCircle2, Clock, Mail, MapPin, Phone } from 'lucide-react'
+import { AlertCircle, ArrowRight, CheckCircle2, Clock, Globe, Mail, Phone } from 'lucide-react'
 import { PageHero, usePageMeta } from '../components/blocks'
 import { SERVICES } from '../data/services'
 import { SITE } from '../data/site'
 import './Contact.css'
 
-const TIMELINES = ['As soon as possible', 'Within 3 months', '3–6 months', 'Just exploring options']
+const TIMELINES = ['As soon as possible', 'Within 3 months', 'In 3 to 6 months', 'Just exploring options']
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 
 const NEXT = [
   { t: 'We reply', d: `An engineer reads your message and replies within ${SITE.replyPromise}.` },
   { t: 'Discovery call', d: 'A 30-minute call to understand your goals, constraints and current systems.' },
-  { t: 'Written proposal', d: 'A scope document with milestones, timeline and a fixed quote — no obligation.' },
+  { t: 'Written proposal', d: 'A scope document with milestones, timeline and a fixed quote. No obligation.' },
 ]
 
 function validate(v) {
@@ -20,7 +20,7 @@ function validate(v) {
   if (!v.name.trim()) e.name = 'Enter your name.'
   if (!v.email.trim()) e.email = 'Enter your email address.'
   else if (!EMAIL_RE.test(v.email.trim())) e.email = 'Enter an email address like name@company.com.'
-  if (v.message.trim().length < 20) e.message = 'Tell us a little more — at least 20 characters.'
+  if (v.message.trim().length < 20) e.message = 'Tell us a little more (at least 20 characters).'
   return e
 }
 
@@ -81,7 +81,7 @@ export default function Contact() {
         trail={[{ label: 'Home', to: '/' }, { label: 'Contact' }]}
         eyebrow="Contact"
         title="Tell us what needs to run better."
-        lede={`Share a few details about your project. An engineer — not a sales script — will reply within ${SITE.replyPromise}.`}
+        lede={`Share a few details about your project. An engineer, not a sales script, will reply within ${SITE.replyPromise}.`}
       />
 
       <section className="section theme-light">
@@ -172,7 +172,7 @@ export default function Contact() {
             <ul role="list" className="ct-direct">
               <li><Mail aria-hidden="true" /><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
               {SITE.phone && <li><Phone aria-hidden="true" /><a href={`tel:${SITE.phone.replace(/\s/g, '')}`}>{SITE.phone}</a></li>}
-              <li><MapPin aria-hidden="true" /><span>{SITE.location} · {SITE.serving}</span></li>
+              <li><Globe aria-hidden="true" /><span>{SITE.serving}</span></li>
               <li><Clock aria-hidden="true" /><span>{SITE.hours}</span></li>
             </ul>
           </aside>
